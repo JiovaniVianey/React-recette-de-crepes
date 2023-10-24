@@ -1,0 +1,33 @@
+.banner {
+  // on ne change pas la position de header, c'est juste pour qu'il soit "positionné" et qu'il serve de référence pour le positionnement du bandeau de titre
+  position: relative;
+
+  .banner-image {
+    max-width: 100%;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .banner-content {
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    /*
+ce qui sert de référence : le premier ancêtre positionné (qui a une valeur position différente de static, sachant que static est la valeur par défaut)
+    */
+    position: absolute;
+    bottom: 2rem;
+    /* on étire jusqu'aux bords gauche et droit */
+    left: 0;
+    right: 0;
+
+    .banner-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      font-style: italic;
+    }
+    .banner-info {
+      margin-top: 0.5em;
+    }
+  }
+}

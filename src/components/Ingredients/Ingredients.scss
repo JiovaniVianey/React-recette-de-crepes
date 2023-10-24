@@ -1,0 +1,28 @@
+@use 'src/styles/variables';
+
+.ingredients {
+  margin-top: 1.5rem;
+  padding: 0;
+
+  .ingredient {
+    padding: 0.8rem 2rem;
+    border-bottom: 1px solid #ccc;
+
+    .quantity {
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 0.3rem;
+      // on utilise la couleur contenue dans une variable sass
+      background-color: variables.$main-color;
+      // sera traduit en CSS par : background-color: #f18042;
+      margin-inline-end: 0.5em;
+      // ou plus simplement margin-right: 0.5em;
+    }
+  }
+
+  // on sélectionne l'élément qui a la classe ingredient et qui est le dernier
+  // enfant de son parent
+  .ingredient:last-child {
+    border-bottom: none;
+  }
+}

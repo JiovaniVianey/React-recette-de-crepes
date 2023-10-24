@@ -1,0 +1,43 @@
+@use 'src/styles/variables';
+
+.steps {
+  font-size: 1.2em;
+  padding: 2rem;
+  border-radius: 1rem 1rem 0 0;
+  background-color: #ccc;
+  margin-top: 1.5em;
+  list-style: none;
+
+  .step {
+    line-height: 1.5;
+    position: relative;
+    // on décale le contenu pour laisser la place d'afficher le tiret
+    padding-left: 1.5rem;
+  }
+
+  /*
+  on ajoute un pseudo-élément pour la décoration
+  https://developer.mozilla.org/en-US/docs/Web/CSS/::before (et ::after)
+  */
+  .step::before {
+    // content: '🔗';
+
+    // on voudrait une pseudo-div de 1 px de haut et 1.2rem de large
+    // obligation de donner la propriété content, même si elle est vide, sinon pas
+    // d'affichage
+    content: '';
+
+    background-color: variables.$main-color;
+    width: 1.2rem;
+    height: 1px;
+
+    // par défaut un pseudo-élément est inline, donc on ne peut pas lui définir
+    // de dimensions
+    display: block;
+
+    position: absolute;
+    // correction pour avoir le tiret en haut de l'élément et pas au milieu
+    inset-block-start: 0.9rem;
+    left: 0;
+  }
+}
